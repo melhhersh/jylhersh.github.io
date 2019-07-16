@@ -49,13 +49,21 @@
     justify-content: left;
     align-items: flex-end;
 }
-.center_top{
+.center_mid{
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-start;
 }
 .center_bot{
     display: flex;
     justify-content: center;
     align-items: flex-end;
+}
+h2{
+    color: whitesmoke;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    padding: 10px;
+    text-shadow: 1px 1px 1px black
 }
