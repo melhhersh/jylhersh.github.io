@@ -8,108 +8,99 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="styles/styles.css" />
 <style>
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif;}
 .w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
 .w3-third img:hover{opacity: 1}
+.background {
+    background-image: url('Images/rothko_inspo.jpg');
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 </style>
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
-<!-- menu
-<div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
-    <a
-      id="navEl"
-      class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-mobile w3-center"
-      href="javascript:void(0);"
-      onclick="toggleFunction()"
-      title="Toggle Navigation Menu"
-    >
-      <i class="fa fa-bars"></i>
-    </a>
-    <a href="#services" class="w3-bar-item w3-button w3-hide-small" style="width:33%"><i class="fa fa-th"></i> SERVICES</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small" style="width:33%"><i class="fa fa-user"></i> ABOUT</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small" style="width:33%"><i class="fa fa-envelope"></i> CONTACT</a>
-  </div>
-    <!-- Navbar on small screens -->
-  <!-- <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#services" class="w3-bar-item w3-button" onclick="toggleFunction()">SERVICES</a>
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-  </div>
-</div>  -->
+<<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
+  <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">close</a> 
+  <a href="#ttouch" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">ttouch</a> 
+  <a href="#train" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">train</a> 
+  <a href="#rescue" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">rescue</a> 
+  <a href="#pif" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">pay it forward</a> 
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">about</a> 
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">contact</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+  <!-- <span class="w3-left w3-padding ">Sweetheart Pet Services</span> -->
+  <a href="#background" onclick="w3_close()" class="w3-left w3-padding ">Sweetheart Pet Services</a>
+  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
 
 <!-- !PAGE CONTENT! -->
-<div class="">
-  <!-- Push down content on small screens --> 
-  <div class="w3-hide-large" style="margin-top:83px"></div>
-  
-  <!-- Photo grid -->
-  <div class="" id="services" style="height: 100vh">
-      <div class="row row1" style="background-color: #6BDDEB">
-        <div class="inner left_top" onclick="onClick(this)" id="Images/dog1.jpg" slot="Here will be a paragraph about training."><h2>TRAIN</h2></div>
-        <div class="inner" ></div>  
-        <div class="inner right_top" onclick="onClick(this)" id="Images/dog2.jpg" slot="Here will be a paragraph about rescue."><h2>RESCUE</h2></div>
-      </div>
-      <div class="row row2" style="background-color: #52C5D9">
-        <div class="inner left_mid" onclick="onClick(this)"  id="Images/dog3.jpg" slot="Here will be a paragraph about ttouch."><h2>TTOUCH</h2></div>
-        
-        <div class="inner center_mid" onclick="onClick(this)" id="Images/valentine.jpg" slot="Here is a nice description so on and so on"><h2>SWEETHEART PET SERVICES</h2></div>  
-        <div class="inner right_mid" onclick="onClick(this)" id="Images/dog4.jpg" slot="Here will be a paragraph about pay it forward with links."><h2>PAY IT FORWARD</h2></div>
-      </div>
-      <div class="row row3" style="background-color: #0CA5A3">
-        <div class="inner"></div> 
-        <div class="inner center_bot" onclick="onClick(this)"  id="Images/phone.jpg" slot="phone: (512) 669-0093 <br> email: info@sweetheartpetservices.com"><h2>CONTACT</h2></div>
-        <div class="inner"></div> 
-      </div>
-  </div>
+<!-- <div class="w3-main w3-content" style="max-width:1600px;margin-top:83px"> -->
+  <div class="w3-hide-large" style="margin-top:83px" id="train"></div>
+  <div class="background w3-container w3-center" id="background"></div>
 
-  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
-    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
-    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-      <img id="img01" class="w3-image">
-      <p id="caption"></p>
-    </div>
+<!-- TTOUCH section -->
+<div class="background w3-container w3-center w3-text-light-grey w3-padding-32" id="ttouch">
+  <h4><b>Ttouch</b></h4>
+  <img src="Images/021412-1.JPG" alt="Me" class="w3-image w3-padding-32" width="30%" height="60%">
+  <div class="w3-content w3-justify w3-padding-32" style="max-width:600px">
+    <h4>ttouch</h4>
+    <p>I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
   </div>
-  
-
-  <!-- About section
-  <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about">
+</div>
+<!-- Train section -->
+<div class="background w3-container w3-center w3-text-light-grey w3-padding-32" id="train">
+  <h4><b>Train</b></h4>
+  <img src="Images/16024.GIF.gif" alt="Me" class="w3-image w3-padding-32" width="20%" height="40%">
+  <div class="w3-content w3-justify w3-padding-32" style="max-width:600px">
+    <h4>train</h4>
+    <p>I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </div>
+</div>
+<!-- Rescue section -->
+<div class="background w3-container w3-center w3-text-light-grey w3-padding-32" id="rescue">
+  <h4><b>Rescue</b></h4>
+  <img src="Images/021412-4.JPG" alt="Me" class="w3-image w3-padding-32" width="30%" height="60%">
+  <div class="w3-content w3-justify w3-padding-32" style="max-width:600px">
+    <h4>rescue</h4>
+    <p>I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </div>
+</div>
+<!-- Pay it forward section -->
+<div class="background w3-container w3-center w3-text-light-grey w3-padding-32" id="pif">
+  <h4><b>Pay It Forward</b></h4>
+  <img src="Images/saddoggie.JPG" alt="Me" class="w3-image w3-padding-32" width="30%" height="60%">
+  <div class="w3-content w3-justify w3-padding-32" style="max-width:600px">
+    <h4>pay it forward</h4>
+    <p>I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </div>
+</div>
+  <!-- About section -->
+  <div class="background w3-container w3-center w3-text-light-grey w3-padding-32" id="about">
     <h4><b>About</b></h4>
-    <img src="Images/valentine.jpg" alt="Me" class="w3-image w3-padding-32" width="600" height="650">
-    <div class="w3-content w3-justify" style="max-width:600px">
+    <img src="Images/valentine.jpg" alt="Me" class="w3-image w3-padding-32" width="30%" height="60%">
+    <div class="w3-content w3-justify w3-padding-32" style="max-width:600px">
       <h4>Jyl Hershman-Ross</h4>
-      <p>I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      <p>I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
     </div>
   </div>
-
-  <!-- Contact section -->
-  <!-- <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
-    <div class="" style="max-width:600px">
-      <h4 class="w3-center"><b>Contact Me</b></h4>
-      <p>How can I help your pup?</p>
-      <form action="/action_page.php" target="_blank">
-        <div class="w3-section">
-          <label>Name</label>
-          <input class="w3-input w3-border" type="text" name="Name" required>
-        </div>
-        <div class="w3-section">
-          <label>Email</label>
-          <input class="w3-input w3-border" type="text" name="Email" required>
-        </div>
-        <div class="w3-section">
-          <label>Message</label>
-          <input class="w3-input w3-border" type="text" name="Message" required>
-        </div>
-        <button type="submit" class="w3-button w3-block w3-black w3-margin-bottom">Send Message</button>
-      </form>
-    </div>
-  </div> -->
-
   <!-- Footer -->
-  <!-- <footer class="w3-container w3-padding-32 w3-grey">  
+  <footer class="w3-container w3-padding-32 w3-grey" id="contact">  
     <div class="w3-row-padding">
       <div class="w3-third">
         <h3>CONTACT INFO</h3>
@@ -117,7 +108,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <p>phone: (123)456-7890</p>      
       </div>
     </div>
-  </footer> -->
+  </footer>
 
 <!-- End page content -->
 </div>
