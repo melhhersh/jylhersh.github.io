@@ -22,94 +22,65 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif;}
 </style>
 <body class="w3-light-grey">
 
-<<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
-  <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">close</a> 
-  <a href="#ttouch" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">ttouch</a> 
-  <a href="#training" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">train</a>
-  <a href="#rescue" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">rescue</a> 
-  <a href="#pif" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">pay it forward</a> 
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">about</a> 
-  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">contact</a>
-</nav>
-
-<!-- Top menu on small screens -->
-<header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
-  <!-- <span class="w3-left w3-padding ">Sweetheart Pet Services</span> -->
-  <a href="#background" onclick="w3_close()" class="w3-left w3-padding ">Sweetheart Pet Services</a>
-  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
-</header>
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-
-<!-- !PAGE CONTENT! -->
-<!-- <div class="w3-main w3-content" style="max-width:1600px;margin-top:83px"> -->
-  <div class="w3-hide-large" style="margin-top:83px" id="train"></div>
-  <div class="background w3-container w3-center" id="background">
-    <div class="w3-display-bottommiddle" style="white-space:nowrap">
-      <span class="w3-center w3-padding-large w3-light-grey w3-xlarge w3-wide w3-animate-opacity" style="border-radius: 20px">scroll for services</span>
+  <!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-card" style="background-color:rgb(8, 129, 127); color: #6BDDEB; box-shadow: 0px 4px 10px 14px rgb(8, 129, 127)">
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="onClick(this)" id="Images/valentine.jpg" slot="Here will be a paragraph about you!">sweetheart pet services</a>
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" onclick="onClick(this)" id="Images/dog1.jpg" slot="Here will be a paragraph about ttouch.">ttouch</a>
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" onclick="onClick(this)"  id="Images/dog3.jpg" slot="Here will be a paragraph about training.">train</a>
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" onclick="onClick(this)" id="Images/dog2.jpg" slot="Here will be a paragraph about rescue.">rescue</a>
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" onclick="onClick(this)" id="Images/dog4.jpg" slot="Here will be a paragraph about pay it forward with links.">pay it forward</a>
+      <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">contact</a>
+      </div>
     </div>
   </div>
+  
+  <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+  <div id="navDemo" class="w3-bar-block  w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px; background-color:rgb(8, 129, 127); color: #6BDDEB">
+    <a class="w3-bar-item w3-button w3-padding-large" onclick="onClick(this)" id="Images/dog1.jpg" slot="Here will be a paragraph about ttouch.">ttouch</a>
+    <a class="w3-bar-item w3-button w3-padding-large" onclick="onClick(this)"  id="Images/dog3.jpg" slot="Here will be a paragraph about training.">train</a>
+    <a class="w3-bar-item w3-button w3-padding-large" onclick="onClick(this)" id="Images/dog2.jpg" slot="Here will be a paragraph about rescue.">rescue</a>
+    <a class="w3-bar-item w3-button w3-padding-large" onclick="onClick(this)" id="Images/dog4.jpg" slot="Here will be a paragraph about pay it forward with links.">pay it forward</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">contact</a>
+  </div>
 
-<!-- TTOUCH section -->
-<div class="background w3-container w3-center w3-text-light-grey w3-padding-32" id="ttouch">
-  <h4><b>Ttouch</b></h4>
-  <img src="Images/021412-1.JPG" alt="Me" class="w3-image w3-padding-32" width="30%" height="60%">
-  <div class="w3-content w3-justify w3-padding-32" style="max-width:600px">
-    <h4>ttouch</h4>
-    <p>I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
+<!-- !PAGE CONTENT! -->
+
+<!-- Photo grid -->
+  <div id="services" style="height: 100vh">
+      <div style="background-color: #6BDDEB; height: 20%">
+      </div>
+      <div class="row" style="background-color: #52C5D9; height: 40%">
+        <div class="inner" style="box-shadow: 0px 4px 10px 14px #52C5D9; border-radius: 15px"></div>
+        <div class="inner center_bot" style="box-shadow: 0px -4px 10px 14px #52C5D9; border-radius: 15px" onclick="onClick(this)" id="Images/dog1.jpg" slot="Here will be a paragraph about ttouch."><a class="a1">ttouch</a></div>
+        <div class="inner" style="box-shadow: 0px -6px 10px 14px #52C5D9; border-radius: 15px"></div>
+        <div class="inner" style="box-shadow: 0px 2px 10px 14px #52C5D9; border-radius: 15px"></div>
+        <div class="inner right_top" style="box-shadow: 0px -1px 10px 14px #52C5D9; border-radius: 15px" onclick="onClick(this)"  id="Images/dog3.jpg" slot="Here will be a paragraph about training."><a class="a1">train</a></div>
+      </div>
+      <div style="background-color: #6BDDEB; height: 10%">
+      </div>
+      <div class="row" style="background-color: #0CA5A3; height: 25%">
+        <div class="inner" style="box-shadow: 0px -2px 10px 14px #0CA5A3; border-radius: 15px"></div>
+        <div class="inner right_mid" style="box-shadow: 0px 0px 10px 14px #0CA5A3; border-radius: 15px" onclick="onClick(this)" id="Images/dog2.jpg" slot="Here will be a paragraph about rescue."><a class="a2">rescue</a></div>
+        <div class="inner" style="box-shadow: 0px 2px 10px 14px #0CA5A3; border-radius: 15px"></div>
+        <div class="inner right_top" style="box-shadow: 0px -1px 10px 14px #0CA5A3; border-radius: 15px" onclick="onClick(this)" id="Images/dog4.jpg" slot="Here will be a paragraph about pay it forward with links."><a class="a2">pay it forward</a></div>
+        <div class="inner" style="box-shadow: 0px 2px 10px 14px #0CA5A3; border-radius: 15px"></div>
+      </div>
+      <div style="background-color: #6BDDEB; height: 20%">
+      </div>
+  </div> 
+
+<div id="modal01" class="w3-modal" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption" style="color: #6BDDEB"></p>
+    </div>
   </div>
-</div>
-    
-<!-- Train section -->
-<div class="background w3-container w3-center w3-text-light-grey w3-padding-32" id="training">
-  <h4><b>Train</b></h4>
-  <img src="Images/16024.GIF.gif" alt="Me" class="w3-image w3-padding-32" width="20%" height="40%">
-  <div class="w3-content w3-justify w3-padding-32" style="max-width:600px">
-    <h4>train</h4>
-    <p>I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-  </div>
-</div>
-    
-<!-- Rescue section -->
-<div class="background w3-container w3-center w3-text-light-grey w3-padding-32" id="rescue">
-  <h4><b>Rescue</b></h4>
-  <img src="Images/021412-4.JPG" alt="Me" class="w3-image w3-padding-32" width="30%" height="60%">
-  <div class="w3-content w3-justify w3-padding-32" style="max-width:600px">
-    <h4>rescue</h4>
-    <p>I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-  </div>
-</div>
-    
-<!-- Pay it forward section -->
-<div class="background w3-container w3-center w3-text-light-grey w3-padding-32" id="pif">
-  <h4><b>Pay It Forward</b></h4>
-  <img src="Images/saddoggie.JPG" alt="Me" class="w3-image w3-padding-32" width="30%" height="60%">
-  <div class="w3-content w3-justify w3-padding-32" style="max-width:600px">
-    <h4>pay it forward</h4>
-    <p>I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-  </div>
-</div>
-    
-  <!-- About section -->
-<div class="background w3-container w3-center w3-text-light-grey w3-padding-32" id="about">
-  <h4><b>About</b></h4>
-  <img src="Images/valentine.jpg" alt="Me" class="w3-image w3-padding-32" width="30%" height="60%">
-  <div class="w3-content w3-justify w3-padding-32" style="max-width:600px">
-    <h4>Jyl Hershman-Ross</h4>
-    <p>I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-  </div>
- </div>
  
   <!-- Footer -->
-  <footer class="w3-container w3-padding-32 w3-grey" id="contact" style="padding: 50">  
+  <footer class="w3-container w3-padding-8" id="contact" style="padding: 50; box-shadow: 0px 4px 10px 14px teal; background-color: teal; color: #6BDDEB">  
     <div class="w3-row-padding">
       <div class="w3-third">
         <h3>CONTACT INFO</h3>
@@ -124,14 +95,13 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif;}
 
 <script>
 // Script to open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
 }
 
 // Modal Image Gallery
