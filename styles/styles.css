@@ -5,7 +5,10 @@
 .content{
     padding-top: 32px;
 }
-.ipadContent{
+.pifContent{
+    height: 84vh;  
+}
+.trainContent{
     height: 84vh;  
 }
 @media only screen 
@@ -17,8 +20,29 @@ and (max-device-width : 1024px)  {
     .content{
         padding-top: 10%;
     }
-    .ipadContent{
+    .pifContent{
         height: 90vh;  
+    }
+    .trainContent{
+        height: 90vh;  
+    }
+}
+
+@media only screen 
+and (min-device-width : 321px) 
+and (max-device-width : 415px)  { 
+    .pifContent{
+        height: 87vh;  
+    }
+    .trainContent{
+        height: auto;  
+    }
+}
+
+@media only screen 
+and (max-device-width : 320px)  { 
+    .pifContent{
+        height: auto;  
     }
 }
 
@@ -39,9 +63,6 @@ and (max-device-width : 1024px)  {
   }
 
 @media only screen and (max-width: 1100px) {
-    .aboutMe{
-        min-height: 250px;
-    }
     #cover {
         padding-top: 100px;
     }
@@ -51,9 +72,6 @@ and (max-device-width : 1024px)  {
   }
 
   @media only screen and (max-width: 738px) {
-    .aboutMe {
-      min-height: 250px;
-    }
     #cover{
         padding-top: 125px;
         height: 84vh;
@@ -61,9 +79,6 @@ and (max-device-width : 1024px)  {
   }
   
   @media only screen and (max-width: 600px) {
-    .aboutMe {
-      min-height: 250px;
-    }
     #cover{
         padding-top: 50px;
         height: 86vh;
